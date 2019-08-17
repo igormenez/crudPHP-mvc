@@ -16,7 +16,7 @@ Class ControllerHome extends ClassRender implements InterfaceView{
         $this->setDir("home");
         $this->renderLayout();
     }
-
- 
-
+    
+    
+    
 }

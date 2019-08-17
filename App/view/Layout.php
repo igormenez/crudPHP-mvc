@@ -32,14 +32,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="home">Home</a></li>
-        <li><a href="cadastro">Cadastro</a></li>
-        <li><a href="#">Projects</a></li>
+        <li class="active"><a href="<?php echo DIRPAGE.'home' ?>">Home</a></li>
+        <li><a href="<?php echo DIRPAGE.'cadastro' ?>">Cadastro</a></li>
+        <li><a href="<?php echo DIRPAGE.'pesquisa' ?>">Pesquisar</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+      
     </div>
   </div>
 </nav>
@@ -62,15 +60,12 @@
     
     <div class="Footer">
         
-        <footer class="container-fluid text-center">
+  <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
 
         <?php echo $this->addFooter();?>
-    </div>
-
-	
+    </div>	
 </body>
 
 </html>
-

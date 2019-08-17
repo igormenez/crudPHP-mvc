@@ -2,7 +2,8 @@
 
 namespace App\Model;
 
-abstract class ClassConexao{
+/*abstract*/ 
+ class ClassConexao{
     
     #CONEXAO COM BANCO DE DADOS
     public function conexaoDB(){
