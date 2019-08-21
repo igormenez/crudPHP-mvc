@@ -6,25 +6,12 @@ use App\Model\ClassConexao;
 
 class ClassListar extends ClassConexao{
     
-    public function recVariaveis(){ 
-        if(isset($_POST['Nome'])){
-            $this->nome= filter_input(INPUT_POST,'Nome',FILTER_SANITIZE_SPECIAL_CHARS);
-        }        
-        
-        if(isset($_POST['Cidade'])){
-            $this->cidade= filter_input(INPUT_POST,'Cidade',FILTER_SANITIZE_SPECIAL_CHARS);
-        }
-        
-        if(isset($_POST['Estado'])){
-            $this->estado= filter_input(INPUT_POST,'Estado',FILTER_SANITIZE_SPECIAL_CHARS);
-        }
-        
-    }
+   
     
     protected function selecao($Nome,$Cidade,$Estado){
-        $Nome="%".$Nome;
-        $Cidade="%".$Cidade;
-        $Estado="%".$Estado;
+        $Nome='%'.$Nome.'%';
+        $Cidade='%'.$Cidade.'%';
+        $Estado='%'.$Estado.'%';
         $BFetch= $this->Db=$this->conexaoDB()->prepare("select * from pessoa where Nome like :nome and Cidade like :cidade and Estado like :estado");
        
         $BFetch->bindParam(":nome", $Nome,\PDO::PARAM_STR);
@@ -33,11 +20,26 @@ class ClassListar extends ClassConexao{
         $BFetch->execute();
         $I=0;
         while($Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC)){
-            $array[$I]=['Nome'=>$Fetch['nome'],'Cidade'=>$Fetch['cidade'],'Estado'=>$Fetch['estado']];
-            $I++;
-            
+            $array[$I]=['Id'=>$Fetch['id'],'Nome'=>$Fetch['nome'],'Cidade'=>$Fetch['cidade'],'Estado'=>$Fetch['estado']];
+            $I++;            
         }
-        return $array;        
+        return $array;     
+    }
+    
+    #deletar
+    protected function deletarPessoa($Id){
+        $BFetch= $this->Db= $this->conexaoDB()->prepare("delete from pessoa where Id=:id");
+        $BFetch->bindParam(":id", $Id,\PDO::PARAM_INT);
+        $BFetch->execute();
+    }
+    #Atualizar 
+    protected function atualizaCadastro($Id,$Nome,$Cidade,$Estado){
+        $BFetch= $this->Db=$this->conexaoDB()->prepare("update pessoa set Nome=:nome, Cidade=:cidade, Estado=:estado where Id=:id");
+       $BFetch->bindParam(":id", $Id,\PDO::PARAM_INT);
+        $BFetch->bindParam(":nome", $Nome,\PDO::PARAM_STR);
+        $BFetch->bindParam(":cidade", $Cidade,\PDO::PARAM_STR);
+        $BFetch->bindParam(":estado", $Estado,\PDO::PARAM_STR);
+        $BFetch->execute();
         
     }
    

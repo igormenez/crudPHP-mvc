@@ -10,10 +10,10 @@ define('DIRREQ',"{$_SERVER['DOCUMENT_ROOT']}{$pastaInterna}");
 }
 
 #definindo diretórios
-define('DIRIMG',DIRPAGE."public/img/");
-define('DIRCSS',DIRPAGE."public/css/");
-define('DIRFONTS',DIRPAGE."public/fontes/");
-define('DIRJS',DIRPAGE."public/js/");
+define('DIRIMG',DIRPAGE."Public/img/");
+define('DIRCSS',DIRPAGE."Public/css/");
+define('DIRFONTS',DIRPAGE."Public/fontes/");
+define('DIRJS',DIRPAGE."Public/js/");
 
 #BANCO DE DADOS
 define('HOST',"localhost");

@@ -1,3 +1,4 @@
+<link href="<?php echo DIRCSS.'listar/main.css';?>"/>
 <div class="row content">      
     <div class="col-sm-2 sidenav">      
       <p><a href="#">PESQUISA</a></p>
@@ -10,7 +11,7 @@
       <hr>
       <h3>Test</h3>
       <p>Pesquisa</p>
-<form name="FormListar" id="FormpListar" action="<?php echo DIRPAGE.'pesquisa/selecionar' ?>" method="post" >
+<form name="FormListar" id="FormListar" action="<?php echo DIRPAGE.'pesquisa/selecionar' ?>" method="post" >
   <div class="form-group">
     <label for="exampleFormControlInput1">Nome</label>
     <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Nome">
@@ -25,13 +26,30 @@
   </div>
     <button type="text" class="btn btn-primary">Pesquisar</button>
 </form>
+      <br>
+      <br>
+      
+      <div class="resultado" style="width: 100%;height: 300px; background: #bbb;">
+        
+    </div>
+      <br>
+      <br>
+     
+      <div class="ResultadoFormulario">
+          
+      </div>
+      <di
       </div>
       <div class="col-sm-2 sidenav">
+          
       <div class="well">
         <p>Cad</p>
       </div>
       <div class="well">
         <p>Cad</p>
       </div>
-    </div>
+    </div>  
+    
+    
+    
   </div>

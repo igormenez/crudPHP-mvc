@@ -4,12 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/MVC-app/App/View/listar/Main.php</file>
-            <file>file:/C:/xampp/htdocs/MVC-app/App/Dispatch.php</file>
+            <file>file:/C:/xampp/htdocs/MVC-app/Public/index.php</file>
             <file>file:/C:/xampp/htdocs/MVC-app/App/Controller/ControllerListar.php</file>
-            <file>file:/C:/xampp/htdocs/MVC-app/App/Controller/ControllerCadastro.php</file>
-            <file>file:/C:/xampp/htdocs/MVC-app/App/Model/ClassCadastro.php</file>
-            <file>file:/C:/xampp/htdocs/MVC-app/app/view/cadastro/Main.php</file>
-            <file>file:/C:/xampp/htdocs/MVC-app/App/Model/ClassPesquisa.php</file>
+            <file>file:/C:/xampp/htdocs/MVC-app/Config/config.php</file>
+            <file>file:/C:/xampp/htdocs/MVC-app/App/Model/ClassListar.php</file>
         </group>
     </open-files>
 </project-private>

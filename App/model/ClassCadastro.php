@@ -6,23 +6,18 @@ use App\Model\ClassConexao;
 
 class ClassCadastro extends ClassConexao{
     
-    
-    
+    protected $Db;
+
+
     protected function cadastroCliente($NOME,$CIDADE,$ESTADO){
         $Id=0;
-        $BFetch=$this->conexaoDB()->prepare("insert into pessoa values (:id,:nome,:cidade,:estado)");
+        $this->Db=$this->conexaoDB()->prepare("insert into pessoa values (:id,:nome,:cidade,:estado)");
+        $this->Db->bindParam(":id", $Id,\PDO::PARAM_STR);
+        $this->Db->bindParam(":nome", $NOME,\PDO::PARAM_STR);
+        $this->Db->bindParam(":cidade", $CIDADE,\PDO::PARAM_STR);
+        $this->Db->bindParam(":estado", $ESTADO,\PDO::PARAM_STR);
+        $this->Db->execute();
         
-        $BFetch->bindParam(":nome", $NOME,\PDO::PARAM_STR);
-        $BFetch->bindParam(":cidade", $CIDADE,\PDO::PARAM_STR);
-        $BFetch->bindParam(":estado", $ESTADO,\PDO::PARAM_STR);
-        $BFetch->execute();
-        
-        $I=0;
-        while ($Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC)){
-            $ARR[$Id]=['Nome'=>$Fetch['nome'],'Cidade'=>$Fetch['cidade'],'Estado'=>$Fetch['estado']];
-            $I++;    
-            }
-            return $ARR;
-    }
+        }
     
 }

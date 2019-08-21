@@ -28,7 +28,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="<?php? echo DIRPAGE;?>">Logo</a>
+      <a class="navbar-brand" href="<?php? echo DIRPAGE.'home'?>">Logo</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -63,7 +63,6 @@
   <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-
         <?php echo $this->addFooter();?>
     </div>	
 </body>
